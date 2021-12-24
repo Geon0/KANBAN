@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false">
+	<class name="com.kcube.kanban.KbItem" table="kb_item">
+		<id name="id" column="itemid" type="java.lang.Long">
+			<generator class="native">
+		 		<param name="sequence_name">SQ_KB_ITEM</param>
+			</generator>
+		</id>
+		<component name="rgstUser" class="com.kcube.sys.usr.User">
+			<property name="userId" column="userid" type="java.lang.Long"/>
+			<property name="name" column="user_name" type="com.kcube.lib.jdbc.EncString"/>
+			<property name="displayName" column="user_disp" type="com.kcube.lib.jdbc.EncString"/>
+		</component>
+		<property name="clob" column="content" type="clob" />
+		<property name="status" column="status" type="integer"/>
+		<property name="visible" column="isvisb" type="boolean"/>
+		<property name="instDate" column="inst_date" type="java.util.Date"/>
+		<property name="lastUpdt" column="last_updt" type="java.util.Date"/>
+		<property name="tenantId" column="tenantid" type="java.lang.Long" />
+		<property name="classId" column="classid" type="java.lang.Long" />
+		<property name="moduleId" column="moduleid" type="java.lang.Long" />
+		<property name="appId" column="appid" type="java.lang.Long" />
+		<property name="spaceId" column="spid" type="java.lang.Long" />
+	</class>
+	
+	<class name="com.kcube.kanban.KbItemCard" table="kb_item_card">
+		<id name="id" column="cardid" type="java.lang.Long">
+			<generator class="native">
+				<param name="sequence_name">SQ_KB_ITEM_CARD</param>
+			</generator>
+		</id>
+		<property name="itemId" column="itemid" type="java.lang.Long" />
+		<property name="title" column="title" type="com.kcube.lib.jdbc.EncString" />
+		<property name="content" column="content" type="com.kcube.lib.jdbc.EncString" />
+		<property name="color" column="color" type="com.kcube.lib.jdbc.EncString" />
+		<property name="visible" column="isvisb" type="boolean" />
+		<property name="status" column="status" type="integer" />
+		<property name="startDate" column="strt_date" type="java.util.Date" />
+		<property name="endDate" column="end_date" type="java.util.Date" />
+		<property name="sec" column="issec" type="boolean" />
+		<property name="fileExt" column="file_ext" type="com.kcube.lib.jdbc.EncString" />
+		<property name="fileCnt" column="file_cnt" type="integer" />
+		<property name="opnCnt" column="opn_cnt" type="integer" />
+		<property name="rowPoint" column="row_point" type="com.kcube.lib.jdbc.EncString" />
+		<property name="rowTitle" column="row_title" type="com.kcube.lib.jdbc.EncString" />
+		<property name="columnPoint" column="column_point" type="com.kcube.lib.jdbc.EncString" />
+		<property name="columnTitle" column="column_title" type="com.kcube.lib.jdbc.EncString" />
+		<property name="sort" column="sort" type="java.lang.Long"/>
+		<property name="lastUpdt" column="last_updt" type="java.util.Date"/>
+		<component name="rgstUser" class="com.kcube.sys.usr.User">
+			<property name="userId" column="rgst_userid" type="java.lang.Long" />
+			<property name="name" column="rgst_name" type="com.kcube.lib.jdbc.EncString" />
+			<property name="displayName" column="rgst_disp" type="com.kcube.lib.jdbc.EncString" />
+		</component>
+		<set name="cardAttachments" inverse="true" lazy="true" sort="natural">
+			<key column="cardId" />
+			<one-to-many class="com.kcube.kanban.KbItemCard$CardAttachment" />
+		</set>
+		<set name="opinions" inverse="true" lazy="true" order-by="gid, opnid">
+			<key column="cardid" />
+			<one-to-many class="com.kcube.kanban.KbItemCard$Opinion" />
+		</set>
+	</class>
+	
+	<class name="com.kcube.kanban.KbItemCard$CardAttachment" table="kb_item_card_file">
+		<id name="id" column="fileid" type="java.lang.Long">
+			<generator class="native">
+				<param name="sequence_name">SQ_KB_ITEM_CARD_FILE</param>
+			</generator>
+		</id>
+		<property name="gid" column="gid" type="java.lang.Long" />
+		<property name="filename" column="file_name" type="com.kcube.lib.jdbc.EncString" />
+		<property name="filesize" column="file_size" type="java.lang.Long" />
+		<property name="path" column="save_path" type="com.kcube.lib.jdbc.EncString" />
+		<property name="dnldCnt" column="dnld_cnt" type="integer" />
+		<property name="type" column="save_code" type="integer" />
+		<component name="rgstUser" class="com.kcube.sys.usr.User">
+			<property name="userId" column="rgst_userid" type="java.lang.Long" />
+			<property name="name" column="rgst_name" type="com.kcube.lib.jdbc.EncString" />
+			<property name="displayName" column="rgst_disp" type="com.kcube.lib.jdbc.EncString" />
+		</component>
+		<property name="lastVersion" column="islastversion" type="boolean"/>
+		<property name="vrsnNum" column="vrsn_num" type="java.lang.Long"/>
+		<property name="instDate" column="inst_date" type="java.util.Date" />
+		<many-to-one name="item" column="cardid" class="com.kcube.kanban.KbItemCard" />
+	</class>
+	
+	<class name="com.kcube.kanban.KbItemCard$Opinion" table="kb_item_card_opn">
+		<id name="id" column="opnid" type="java.lang.Long">
+			<generator class="native">
+				<param name="sequence_name">SQ_KB_ITEM_CARD_OPN</param>
+			</generator>
+		</id>
+		<property name="gid" column="gid" type="java.lang.Long" />
+		<property name="itemId" column="cardid" type="java.lang.Long" />
+		<property name="content" column="content" type="com.kcube.lib.jdbc.EncString" />
+		<property name="rgstDate" column="rgst_date" type="java.util.Date" />
+		<component name="rgstUser" class="com.kcube.sys.usr.User">
+			<property name="userId" column="userid" type="java.lang.Long" />
+			<property name="name" column="user_name" type="com.kcube.lib.jdbc.EncString" />
+			<property name="displayName" column="user_disp" type="com.kcube.lib.jdbc.EncString" />
+		</component>
+		<property name="rgstUserId" column="rgst_userid" type="java.lang.Long" />
+	</class>
+	
+	<class name="com.kcube.kanban.KbItemBackup" table="kb_item_backup">
+		<id name="id" column="itemid" type="java.lang.Long">
+			<generator class="native">
+				<param name="sequence_name">SQ_KB_ITEM_BACKUP</param>
+			</generator>
+		</id>
+		<property name="title" column="title" type="com.kcube.lib.jdbc.EncString" />
+		<property name="uuid" column="uuid" type="com.kcube.lib.jdbc.EncString" />
+		<property name="rgstDate" column="rgst_date" type="java.util.Date"/>
+		<component name="rgstUser" class="com.kcube.sys.usr.User">
+			<property name="userId" column="userid" type="java.lang.Long"/>
+			<property name="name" column="user_name" type="com.kcube.lib.jdbc.EncString"/>
+			<property name="displayName" column="user_disp" type="com.kcube.lib.jdbc.EncString"/>
+		</component>
+	</class>
+	
+	<query name="getKbLastVersionFileByItemId">
+	<![CDATA[
+		FROM KbItemCard$CardAttachment AS u WHERE u.lastVersion = true AND u.item = :itemId
+	]]>
+	</query>
+</hibernate-mapping>

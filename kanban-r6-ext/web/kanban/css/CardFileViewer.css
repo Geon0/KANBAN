@@ -1,0 +1,45 @@
+.CardFile {position: relative;}
+.CardFileViewer {padding: 0 0 7px 0;-moz-box-sizing:border-box;box-sizing:border-box;}
+.CardFileViewer .hide {display:none;}
+.CardFileViewer .title{height: 37px;-moz-box-sizing:border-box;box-sizing:border-box;}
+.CardFileViewer .title:after{display: block;content: "";clear: both;}
+.CardFileViewer .title .KButton{float: left;margin: 6px 0 0 0;}
+.CardFileViewer .title .left_title{float:left; margin:20px 0 0 10px; padding:0 0 0 12px; font-weight:bold; color:#5a5c70; background:url(<c:url value="/pd/img/title_bar.gif"/>) 0 4px no-repeat;}
+.CardFileViewer .file{float: left;margin:20px 0 0 0;height: 16px;line-height: 16px;font-weight: bold;}
+.CardFileViewer .file .i_clip{margin: 0 5px 0 0;vertical-align: top;width: 16px;height: 16px;background: url(<c:url value="/pd/img/ico/doc/i_clip.gif"/>) 0 0 no-repeat;}
+.CardFileViewer .file .file_txt{color: #474747;margin: 0 5px 0 0;}
+.CardFileViewer .file .file_num{color: #4092CB;font-family: 'Tahoma','Arial';}
+.CardFileViewer .file_list .file_item{position: relative;padding:5px 5px 5px 0px;-moz-box-sizing:border-box;box-sizing:border-box;}
+.CardFileViewer .file_list .file_item .fileIcon {float:left; margin:-1px 4px 0 5px; cursor:pointer;}
+.CardFileViewer .file_list .file_item .fileName {color:#7c7c7c; text-decoration:none; cursor:pointer;}
+.CardFileViewer .file_list .file_item .fileName:hover {color:#7c7c7c; text-decoration:underline;}
+.CardFileViewer .file_list .file_item .fileName .nameDiv {width:auto;float:none;color:#333;}
+.CardFileViewer .file_list .file_item .fileName .nameDiv:hover {color:#333;text-decoration:underline;}
+.CardFileViewer .file_list .file_item .fileName .sizeDiv {width:auto; float:none; font-size:11px; color:#a9a8a8; font-family:'Tahoma','Arial';}
+.CardFileViewer .file_list .file_item .save {margin-left:5px;color:#777; text-decoration:none; cursor:pointer;}
+.CardFileViewer .file_list .file_item .edit {color:#777; text-decoration:none; cursor:pointer;}
+.CardFileViewer .file_list .file_item .del {color:#777; text-decoration:none; cursor:pointer;}
+.CardFileViewer .file_list .file_item .block {margin:0 1px; color:#ccc; text-decoration:none;}
+.CardFileViewer .file_revise{color:#8f8f8f; margin-left:5px;}
+.CardFileViewer .file_revise span{color:#20232c;}
+.CardFileViewer .file_revise .icon_lock{margin-right:4px;}
+.CardFileViewer_moveDiv {padding:1px 10px 6px 0;display:none;position:absolute;background-color:#FFFFFF;border:1px solid #AAAAAA;z-index:1000;white-space:nowrap;}
+.CardFileViewer_moveDiv .submenu {padding:6px 0 0 6px; height:13px; }
+.CardFileViewer_moveDiv .submenu:hover{background-color: beige;}
+.CardFileViewer_moveDiv .icon {vertical-align:middle; margin:0 4px 0 0;}
+.CardFileViewer_moveDiv .text {cursor:pointer;color:#5a5a5a; font-family:'Dotum','Arial'; font-size:12px;}
+.CardFileViewer .layerFileupLoad{display:none; padding: 0;z-index:10000;}
+.CardFileViewer .fileUploadList .fileArea{height: 315px;border-bottom: 1px solid #E2E3E4;background-color: #F7F7F7;}
+.CardFileViewer .fileUploadList table{border-collapse: collapse;table-layout: fixed;width: 100%;}
+.CardFileViewer .fileUploadList table th,td{vertical-align: middle;}
+.CardFileViewer .fileUploadList table th{padding: 3px 0 0 0;height: 18px;color: #575757;border: 1px solid #D0D2D3;border-right: none;background-color: #f3f3f3;font-size: 11px;font-weight: normal;}
+.CardFileViewer .fileUploadList table th:first-child{border-left: none;}
+.CardFileViewer .fileUploadList table td{height: 24px;}
+.CardFileViewer .fileUploadList table .fileName{color: #000;line-height: 13px;max-width:251px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;padding: 0 7px 0 12px;}
+.CardFileViewer .fileUploadList table .fileName img{vertical-align: -3px;margin: 0 4px 0 0;}
+.CardFileViewer .fileUploadList table .fileSize{color: #777;padding: 0 0 0 9px;}
+.CardFileViewer .fileUploadList table .status{padding: 0 0 0 10px;}
+.CardFileViewer .fileUploadList table .status .progress{float: left;width: 115px;height: 6px;border: 1px solid #A5AAB1;background-color: #F6F6F6;margin: 3px 13px 0 0;}
+.CardFileViewer .fileUploadList table .status .progress .percent{background-color: #9DC7FB;height: 100%;font-size: 0;line-height: 0;}
+.CardFileViewer .fileUploadList table .status .progress .done{background-color: #D0D0D0;}
+.CardFileViewer .fileUploadList table .status .statusText{float: left;color: #666;}

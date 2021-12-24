@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration class="com.kcube.kanban.KbItem" version="0.0.5" name="noCtgr" category="2000">
+	<title>{"ko":"칸반","en":"칸반","zh":"칸반","ja":"칸반"}</title>
+	<description><![CDATA[분류를 지정할 수 없는 칸반 입니다.]]></description>
+	<developer>KCUBE</developer>
+	<indexUrl>/kanban/usr.main.jsp</indexUrl>
+	<manageUrl>/kanban/adm.index.jsp</manageUrl>
+	<tabs>
+		<map useCtgrMap="true" ctgrMapReadOnly="false" writeSecure="true" readSecure="true" anonymous="true"/>
+		<alimi>
+			<entry key="endTime" updateStr="4" name="{&quot;ko&quot;:&quot;지정시간 도달 알림&quot;,&quot;en&quot;:&quot;Notify me upon new comments&quot;,&quot;zh&quot;:&quot;发表意见时提醒&quot;,&quot;ja&quot;:&quot;コメントが登録された時&quot;}" checked="true" >
+				<title>{"ko":"기간이 만료한 카드가 있습니다.","en":"A comment has been posted.","zh":"有发表的意见。","ja":"に意見が登録されました。"}</title>
+				<url>F:/kanban/usr.main.jsp?id=${item.id}</url>
+				<menuUrl>B:/kanban/usr.main.jsp?id=${item.id}</menuUrl>
+				<originUrl>B:/kanban/usr.main.jsp?id=${item.id}?url=/kanban/usr.main.jsp?id=${item.id}</originUrl>
+				<type>0</type>
+			</entry>
+		</alimi>
+	</tabs>
+</configuration>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<mapping name="attachment" class="com.kcube.kanban.KbItemCard">
+	<bean class="com.kcube.kanban.KbItemCard">
+		<value name="id" />
+		<value name="itemId" />
+		<value name="attachments" method="cardAttachments" source="com.kcube.kanban.KbItemCard$CardAttachment" />
+	</bean>
+	<bean class="com.kcube.sys.usr.User">
+		<value name="name" />
+		<value name="displayName" />
+		<value name="id" method="userId" />
+	</bean>
+	<bean class="com.kcube.kanban.KbItemCard$CardAttachment">
+		<value name="id" />
+		<value name="gid" />
+		<value name="filename" />
+		<value name="size" method="filesize" />
+		<value name="path" />
+		<value name="type" />
+		<value name="method" />
+		<value name="rgstUser" />
+		<value name="lastVersion" />
+		<value name="vrsnNum" />
+		<value name="instDate" />
+	</bean>
+</mapping>

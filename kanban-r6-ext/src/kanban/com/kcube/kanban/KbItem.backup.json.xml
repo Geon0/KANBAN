@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<mapping name="read" class="com.kcube.kanban.KbItemBackup">
+	<bean class="com.kcube.kanban.KbItemBackup">
+		<value name="itemId" />
+		<value name="title" />
+		<value name="rgstUser" />
+		<value name="uuid" />
+		<value name="rgstDate" />
+	</bean>
+	<bean class="com.kcube.sys.usr.User">
+		<value name="name" />
+		<value name="displayName" />
+		<value name="id" method="userId" />
+	</bean>
+</mapping>

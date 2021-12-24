@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sql>
+	<table name="kb_item">
+		<column groups="list,metro" name="itemid" alias="id" />
+		<column groups="list" name="content" alias="content" />
+		<column groups="list,metro" name="status" alias="status" />
+		<column groups="list" name="inst_date" alias="instDate" />
+		<column groups="list" name="last_updt" alias="lastUpdt" />
+		<column groups="list" name="userId" alias="userId" />
+		<column groups="list" name="name" alias="userName" />
+		<column groups="list" name="user_disp" alias="displayName" />
+		<column groups="list,metro" name="tenantid" alias="tenantid" />
+		<column groups="list,metro" name="moduleid" alias="moduleId"/>
+		<column groups="list,metro" name="appid" alias="appId"/>
+		<column groups="list,metro" name="classid" alias="classId"/>
+		<column groups="list,metro" name="spid" alias="spaceId"/>
+	</table>
+</sql>

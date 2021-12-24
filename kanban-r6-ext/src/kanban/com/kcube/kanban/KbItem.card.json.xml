@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<mapping name="read" class="com.kcube.kanban.KbItemCard">
+	<bean class="com.kcube.kanban.KbItemCard">
+		<value name="id" />
+		<value name="itemId" />
+		<value name="title" />
+		<value name="content" />
+		<value name="color" />
+		<value name="status" />
+		<value name="startDate" />
+		<value name="endDate" />
+		<value name="rowPoint" />
+		<value name="rowTitle" />
+		<value name="columnPoint" />
+		<value name="columnTitle" />
+		<value name="sort" />
+		<value name="rgstUser" />
+		<value name="attachments" method="lastCardAttachments" source="com.kcube.kanban.KbItemCard$CardAttachment" />
+		<value name="opinions" method="jsonOpinions" source="com.kcube.kanban.KbItemCard$Opinion" />
+	</bean>
+	<bean class="com.kcube.sys.usr.User">
+		<value name="name" />
+		<value name="displayName" />
+		<value name="id" method="userId" />
+	</bean>
+	<bean class="com.kcube.kanban.KbItemCard$CardAttachment">
+		<value name="id" />
+		<value name="gid" />
+		<value name="filename" />
+		<value name="size" method="filesize" />
+		<value name="path" />
+		<value name="type" />
+		<value name="method" />
+		<value name="rgstUser" />
+		<value name="lastVersion" />
+		<value name="vrsnNum" />
+		<value name="instDate" />
+	</bean>
+	<bean class="com.kcube.kanban.KbItemCard$Opinion">
+		<value name="id" />
+		<value name="itemId" />
+		<value name="gid" />
+		<value name="content" />
+		<value name="user" method="rgstUser" />
+		<value name="rgstDate" />
+		<value name="type" />
+		<value name="currentOwner" />
+	</bean>
+	<bean class="com.kcube.doc.opn.OpinionJson">
+		<value name="total" />
+		<value name="rest" />
+		<value name="array" />
+	</bean>
+</mapping>

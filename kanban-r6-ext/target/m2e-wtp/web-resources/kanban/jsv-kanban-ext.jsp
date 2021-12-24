@@ -1,0 +1,3 @@
+<link type="text/css" href="<%= request.getContextPath() %>/kanban/kanban_min.css?nocache=<%=com.kcube.sys.AppServlet.getNoCacheStr() %>" rel="stylesheet">
+<script type="text/javascript" src="<%= request.getContextPath() %>/kanban/kanban_min.js?nocache=<%=com.kcube.sys.AppServlet.getNoCacheStr() %>"></script>
+<script type="text/javascript" src="<%= request.getContextPath() %>/kanban/script.language.ko.kanban.js?nocache=<%=com.kcube.sys.AppServlet.getNoCacheStr() %>"></script>
