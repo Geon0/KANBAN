@@ -7,6 +7,12 @@
 # 구현기능
 
 - Jquery를 사용한 KANBAN BOARD 구현
+- javascript localstorage를 사용하여 folding 기능 구현
+- Jquery, css를 사용하여 card Drag&Drag 기능 구현
+- 검색기능 구현
+- css를 사용하여 색상 변경 기능 구현
+- 백업 기능 구현
+- 복원 기능 구현
 
 # 사용기술 및 개발환경
 
